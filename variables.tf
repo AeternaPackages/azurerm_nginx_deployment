@@ -25,6 +25,8 @@ Nested nginx_api_keys (azurerm_nginx_api_key):
         - end_date_time
         - name
         - secret_text
+        - secret_text_key_vault_id (alternative to secret_text - read from Key Vault instead)
+        - secret_text_key_vault_secret_name (alternative to secret_text - read from Key Vault instead)
 Nested nginx_certificates (azurerm_nginx_certificate):
     Required:
         - certificate_virtual_path
@@ -79,9 +81,11 @@ EOT
       activation_state_enabled = bool
     }))
     nginx_api_keys = optional(map(object({
-      end_date_time = string
-      name          = string
-      secret_text   = string
+      end_date_time                     = string
+      name                              = string
+      secret_text                       = string
+      secret_text_key_vault_id          = optional(string)
+      secret_text_key_vault_secret_name = optional(string)
     })))
     nginx_certificates = optional(map(object({
       certificate_virtual_path = string
