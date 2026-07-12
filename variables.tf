@@ -51,16 +51,16 @@ EOT
     email                     = optional(string)
     managed_resource_group    = optional(string)
     tags                      = optional(map(string))
-    auto_scale_profile = optional(object({
+    auto_scale_profile = optional(list(object({
       max_capacity = number
       min_capacity = number
       name         = string
-    }))
-    frontend_private = optional(object({
+    })))
+    frontend_private = optional(list(object({
       allocation_method = string
       ip_address        = string
       subnet_id         = string
-    }))
+    })))
     frontend_public = optional(object({
       ip_address = optional(list(string))
     }))
@@ -68,13 +68,13 @@ EOT
       identity_ids = optional(set(string))
       type         = string
     }))
-    logging_storage_account = optional(object({
+    logging_storage_account = optional(list(object({
       container_name = optional(string)
       name           = optional(string)
-    }))
-    network_interface = optional(object({
+    })))
+    network_interface = optional(list(object({
       subnet_id = string
-    }))
+    })))
     web_application_firewall = optional(object({
       activation_state_enabled = bool
     }))
@@ -92,14 +92,14 @@ EOT
     nginx_configurations = optional(map(object({
       root_file    = string
       package_data = optional(string)
-      config_file = optional(object({
+      config_file = optional(list(object({
         content      = string
         virtual_path = string
-      }))
-      protected_file = optional(object({
+      })))
+      protected_file = optional(list(object({
         content      = string
         virtual_path = string
-      }))
+      })))
     })))
   }))
 
