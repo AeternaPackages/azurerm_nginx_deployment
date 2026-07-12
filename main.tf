@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.nginx_deployments : {
       for k2, v2 in coalesce(v1.nginx_api_keys, {}) :
       "${k1}/${k2}" => merge(v2, {
-        nginx_deployment_id = module.nginx_deployments.nginx_deployments["${k1}"].id
+        nginx_deployment_id = module.nginx_deployments.nginx_deployments_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.nginx_deployments : {
       for k2, v2 in coalesce(v1.nginx_certificates, {}) :
       "${k1}/${k2}" => merge(v2, {
-        nginx_deployment_id = module.nginx_deployments.nginx_deployments["${k1}"].id
+        nginx_deployment_id = module.nginx_deployments.nginx_deployments_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.nginx_deployments : {
       for k2, v2 in coalesce(v1.nginx_configurations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        nginx_deployment_id = module.nginx_deployments.nginx_deployments["${k1}"].id
+        nginx_deployment_id = module.nginx_deployments.nginx_deployments_id["${k1}"]
       })
     }
   ]...)
