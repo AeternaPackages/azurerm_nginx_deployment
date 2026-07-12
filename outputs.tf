@@ -1,4 +1,9 @@
 # --- azurerm_nginx_deployment ---
+output "nginx_deployments_id" {
+  description = "Map of id values across all nginx_deployments, keyed the same as var.nginx_deployments"
+  value       = module.nginx_deployments.nginx_deployments_id
+}
+
 output "nginx_deployments_auto_scale_profile" {
   description = "Map of auto_scale_profile values across all nginx_deployments, keyed the same as var.nginx_deployments"
   value       = module.nginx_deployments.nginx_deployments_auto_scale_profile
@@ -100,6 +105,11 @@ output "nginx_deployments_web_application_firewall" {
 }
 
 # --- azurerm_nginx_api_key ---
+output "nginx_api_keys_id" {
+  description = "Map of id values across all nginx_api_keys, keyed the same as var.nginx_api_keys"
+  value       = module.nginx_api_keys.nginx_api_keys_id
+}
+
 output "nginx_api_keys_end_date_time" {
   description = "Map of end_date_time values across all nginx_api_keys, keyed the same as var.nginx_api_keys"
   value       = module.nginx_api_keys.nginx_api_keys_end_date_time
@@ -127,6 +137,11 @@ output "nginx_api_keys_secret_text" {
 }
 
 # --- azurerm_nginx_certificate ---
+output "nginx_certificates_id" {
+  description = "Map of id values across all nginx_certificates, keyed the same as var.nginx_certificates"
+  value       = module.nginx_certificates.nginx_certificates_id
+}
+
 output "nginx_certificates_certificate_virtual_path" {
   description = "Map of certificate_virtual_path values across all nginx_certificates, keyed the same as var.nginx_certificates"
   value       = module.nginx_certificates.nginx_certificates_certificate_virtual_path
@@ -153,6 +168,11 @@ output "nginx_certificates_nginx_deployment_id" {
 }
 
 # --- azurerm_nginx_configuration ---
+output "nginx_configurations_id" {
+  description = "Map of id values across all nginx_configurations, keyed the same as var.nginx_configurations"
+  value       = module.nginx_configurations.nginx_configurations_id
+}
+
 output "nginx_configurations_config_file" {
   description = "Map of config_file values across all nginx_configurations, keyed the same as var.nginx_configurations"
   value       = module.nginx_configurations.nginx_configurations_config_file
