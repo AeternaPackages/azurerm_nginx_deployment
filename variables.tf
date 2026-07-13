@@ -47,7 +47,7 @@ EOT
     name                      = string
     resource_group_name       = string
     sku                       = string
-    automatic_upgrade_channel = optional(string) # Default: "stable"
+    automatic_upgrade_channel = optional(string)
     capacity                  = optional(number)
     diagnose_support_enabled  = optional(bool)
     email                     = optional(string)
