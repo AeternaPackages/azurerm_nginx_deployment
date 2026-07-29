@@ -9,15 +9,12 @@ Required:
 Optional:
     - automatic_upgrade_channel
     - capacity
-    - diagnose_support_enabled
     - email
-    - managed_resource_group
     - tags
     - auto_scale_profile (block)
     - frontend_private (block)
     - frontend_public (block)
     - identity (block)
-    - logging_storage_account (block)
     - network_interface (block)
     - web_application_firewall (block)
 Nested nginx_api_keys (azurerm_nginx_api_key):
@@ -49,9 +46,7 @@ EOT
     sku                       = string
     automatic_upgrade_channel = optional(string)
     capacity                  = optional(number)
-    diagnose_support_enabled  = optional(bool)
     email                     = optional(string)
-    managed_resource_group    = optional(string)
     tags                      = optional(map(string))
     auto_scale_profile = optional(list(object({
       max_capacity = number
@@ -70,10 +65,6 @@ EOT
       identity_ids = optional(set(string))
       type         = string
     }))
-    logging_storage_account = optional(list(object({
-      container_name = optional(string)
-      name           = optional(string)
-    })))
     network_interface = optional(list(object({
       subnet_id = string
     })))

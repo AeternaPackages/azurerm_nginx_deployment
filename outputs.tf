@@ -24,11 +24,6 @@ output "nginx_deployments_dataplane_api_endpoint" {
   value       = module.nginx_deployments.nginx_deployments_dataplane_api_endpoint
 }
 
-output "nginx_deployments_diagnose_support_enabled" {
-  description = "Map of diagnose_support_enabled values across all nginx_deployments, keyed the same as var.nginx_deployments"
-  value       = module.nginx_deployments.nginx_deployments_diagnose_support_enabled
-}
-
 output "nginx_deployments_email" {
   description = "Map of email values across all nginx_deployments, keyed the same as var.nginx_deployments"
   value       = module.nginx_deployments.nginx_deployments_email
@@ -57,16 +52,6 @@ output "nginx_deployments_ip_address" {
 output "nginx_deployments_location" {
   description = "Map of location values across all nginx_deployments, keyed the same as var.nginx_deployments"
   value       = module.nginx_deployments.nginx_deployments_location
-}
-
-output "nginx_deployments_logging_storage_account" {
-  description = "Map of logging_storage_account values across all nginx_deployments, keyed the same as var.nginx_deployments"
-  value       = module.nginx_deployments.nginx_deployments_logging_storage_account
-}
-
-output "nginx_deployments_managed_resource_group" {
-  description = "Map of managed_resource_group values across all nginx_deployments, keyed the same as var.nginx_deployments"
-  value       = module.nginx_deployments.nginx_deployments_managed_resource_group
 }
 
 output "nginx_deployments_name" {
