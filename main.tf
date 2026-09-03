@@ -30,24 +30,24 @@ locals {
 }
 
 module "nginx_deployments" {
-  source            = "git::https://github.com/AeternaModules/azurerm_nginx_deployment.git?ref=v5.0.0"
+  source            = "git::https://github.com/AeternaModules/azurerm_nginx_deployment.git?ref=v5.0.1"
   nginx_deployments = local.nginx_deployments
 }
 
 module "nginx_api_keys" {
-  source         = "git::https://github.com/AeternaModules/azurerm_nginx_api_key.git?ref=v5.0.0"
+  source         = "git::https://github.com/AeternaModules/azurerm_nginx_api_key.git?ref=v5.0.1"
   nginx_api_keys = local.nginx_api_keys
   depends_on     = [module.nginx_deployments]
 }
 
 module "nginx_certificates" {
-  source             = "git::https://github.com/AeternaModules/azurerm_nginx_certificate.git?ref=v5.0.0"
+  source             = "git::https://github.com/AeternaModules/azurerm_nginx_certificate.git?ref=v5.0.1"
   nginx_certificates = local.nginx_certificates
   depends_on         = [module.nginx_deployments]
 }
 
 module "nginx_configurations" {
-  source               = "git::https://github.com/AeternaModules/azurerm_nginx_configuration.git?ref=v5.0.0"
+  source               = "git::https://github.com/AeternaModules/azurerm_nginx_configuration.git?ref=v5.0.1"
   nginx_configurations = local.nginx_configurations
   depends_on           = [module.nginx_deployments]
 }
